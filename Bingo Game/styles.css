@@ -1,0 +1,189 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #F8FAFD;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 2.05px;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  gap: 12px;
+  padding: 16px;
+}
+
+.cell {
+  padding: 8px 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 16px;
+  background: #E7EAF3;
+  border: 1px solid #f5f7fa;
+  box-shadow: 0px 6px 12px 0px rgba(201, 203, 208, 0.25);
+}
+
+.cell:hover {
+  background: lightgreen;
+  box-shadow: 0px 6px 12px 0px rgba(201, 203, 208, 0.25);
+}
+
+.cell.disabled {
+  pointer-events: none;
+  background-color: #ccc;
+}
+
+#player1Board {
+  transform: rotate(180deg);
+}
+
+.cell.marked {
+  background-color: lightgreen;   
+}
+
+.winner-message {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 30px;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+.current-player {
+  border: 3px solid #4CAF50;
+  border-radius: 24px;
+  box-shadow: 0px 0px 20px 6px rgba(76, 175, 80, 0.27);
+  background-color: #ffffff;
+}
+.start-button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#startButton {
+  padding: 12px 44px;
+  width: 200px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  box-shadow: 0px 27px 80px 0px rgba(201, 203, 208, 0.27);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#startButton:hover {
+  background-color: #45a049;
+}
+
+.restart-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#restartButton {
+  padding: 12px 44px;
+  width: 200px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  box-shadow: 0px 27px 80px 0px rgba(201, 203, 208, 0.27);
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#restartButton:hover {
+  background-color: #45a049;
+}
+.container {
+  margin-bottom: 40px; /* Adjust the value as needed */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative; /* Add position relative */
+}
+.start-button-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Add this to your existing CSS or create a new styles.css file */
+#winnerPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999; /* Ensure pop-up is on top of other elements */
+  display: none; /* Hide the pop-up by default */
+}
+
+#winnerPopup h2 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+#winnerPopup p {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+}
+
+#winnerPopup button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 30px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#winnerPopup button:hover {
+  background-color: #0056b3;
+}

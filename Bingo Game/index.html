@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <button id="startButton">Start Game</button>
+    <button id="restartButton" style="display: none;">Restart Game</button>
+    
+    <div class="container">
+      <div class="bingo-board" id="player1Board"></div>
+      <div class="bingo-board" id="player2Board"></div>
+    </div>
+    
+    <div id="winnerMessage"></div>
+    
+    <!-- Click sound -->
+    <audio id="clickSound" src="click_sound.mp3"></audio>
+    <!-- Winning sound -->
+    <audio id="winningSound" src="winning_sound.mp3"></audio>
+  </main>
+  <footer>
+    <script src="bingo.js"></script>
+    <script>
+      document.getElementById("startButton").addEventListener("click", function() {
+        document.getElementById("clickSound").play();
+      });
+
+      document.getElementById("restartButton").addEventListener("click", function() {
+        document.getElementById("clickSound").play();
+      });
+
+      // Add click event listener to each cell within bingo boards
+      var boardContainer = document.querySelector('.container');
+      boardContainer.addEventListener('click', function(event) {
+        var clickedElement = event.target;
+        if (clickedElement.classList.contains('cell')) {
+          document.getElementById("clickSound").play();
+        }
+      });
+    </script>
+  </footer>
+</body>
+</html>
+
+<!-- Add this after your existing HTML -->
+<div id="winnerPopup" class="popup">
+  <div class="popup-content">
+    <h2>Congratulations!</h2>
+    <p id="winnerName"></p>
+    <button id="playAgainButton">Play Again</button>
+    <button id="closePopupButton">Close</button>
+  </div>
+</div>
